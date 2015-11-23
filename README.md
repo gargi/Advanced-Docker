@@ -65,7 +65,7 @@ When git commit is done to the [App](https://github.com/CSC-DevOps/App) reposito
 
 3. Post-receive hooks have been configured for the following:
  * Pulling the image from the registry
- * Deploying the new docker container using that image or stopping an existing container and restarting it with the new code.
+ * Deploying the new docker container using that image or stopping an existing container and restarting it with the new code.  
  The above has been done for green and blue slices using the following post-commit hooks:    
  [Green post-receive](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/green_post-receive)  
  [Blue post-receive](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/blue_post-receive)
