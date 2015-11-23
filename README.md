@@ -1,7 +1,7 @@
 ## Homework 4 - Advanced Docker
 
 ### File IO  
-1. Build a new image from [Dockerfile]():
+1. Build a new image from [Dockerfile](https://github.com/gsrajadh/Advanced-Docker/blob/master/FileIO/First_Container/Dockerfile):
 ```
 docker build -t fileinput .
 ```
@@ -11,7 +11,7 @@ docker build -t fileinput .
 docker run -td --name first_container fileinput
 ```
 
-3. Create a second container using [ Dockerfile]() which links to the first container:
+3. Create a second container using [Dockerfile](https://github.com/gsrajadh/Advanced-Docker/blob/master/FileIO/Second_Container/Dockerfile) which links to the first container:
 ```
 docker build -t fileoutput .
 docker run -td --link first_container:input --name second_container fileoutput
@@ -39,17 +39,17 @@ chmod +x /usr/local/bin/docker-compose
   redis client  
   redis_ambassador_client which is used to send requests from redis client
 
-  3. On the first instance the following command will start the server:
+3. On the first instance the following command will start the server:
   ```
   docker-compose up
   ```
 
-  4. 3. On the second instance the following command will start redis-cli:
+4.  On the second instance the following command will start redis-cli:
   ```
   docker-compose run redis_client
   ```
 
-  5. Set and Get requests can be sent from the client to the server.
+5. Set and Get requests can be sent from the client to the server.
 
 Screencast Link: https://youtu.be/J956wtFj3V0
 
@@ -60,14 +60,14 @@ Screencast Link: https://youtu.be/J956wtFj3V0
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
 
-2. [Post-commit]() hook has been configured such that:
+2. [Post-commit](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/post-commit) hook has been configured such that:
 When git commit is done to the [App](https://github.com/CSC-DevOps/App) repository, it will build a new image, tag it and push it to the local registry.
 
 3. Post-receive hooks have been configured for the following:
  * Pulling the image from the registry
  * Deploying the new docker container using that image or stopping an existing container and restarting it with the new code.
  The above has been done for green and blue slices using the following post-commit hooks:  
- [Green post-commit]()  
- [Blue post-commit]()
+ [Green post-commit](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/green_post-receive)  
+ [Blue post-commit](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/blue_post-receive)
 
  Screencast Link: https://youtu.be/Lb5bxjlLvVo
