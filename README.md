@@ -60,7 +60,7 @@ Screencast Link: https://youtu.be/J956wtFj3V0
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
 
-2. [Post-commit](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/post-commit) hook has been configured such that:
+2. [Post-commit](https://github.com/gsrajadh/Advanced-Docker/blob/master/Deploy/post-commit) hook has been configured such that:  
 When git commit is done to the [App](https://github.com/CSC-DevOps/App) repository, it will build a new image, tag it and push it to the local registry.
 
 3. Post-receive hooks have been configured for the following:
